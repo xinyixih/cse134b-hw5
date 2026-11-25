@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About Xinyi: background, story and skills.">
+    <title>Xinyi - About</title>
+
+    <script src="js/theme.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Stlying skille element pills-->
+    <style> 
+        tech-tag {
+            display: inline-block;
+            border: 1px solid;
+            padding: 0.1em 0.6em;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Site name & Nav Bar -->
+    <header>
+        <p><a href="index.html">HOME</a></p>
+
+        <!-- Nav Bar -->
+        <nav aria-label="Main">
+            <ul>
+                <li><a href="about.html" aria-current="page">About</a></li>
+                <li><a href="project.html">Project</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="form-no-js.html">Form (No JS)</a></li>
+                <li><a href="form-with-js.html">Form (JS)</a></li>
+            </ul>
+        </nav>
+
+        <!-- Theme switch: hidden until js/theme.js makes it work -->
+        <button type="button" id="theme-toggle" hidden>Switch to light theme</button>
+    </header>
+
+    <main>
+        <!-- Personal introduction -->
+        <section aria-labelledby="intro-heading">
+            <h1 id="intro-heading">About Me</h1>
+            <p>
+                Hi! I'm Xinyi, I'm a fourth-year Math-CS and Cognitive Science major (Design and Interaction specialization)
+                and a researcher at the XR Lab, and interned as a UX researcher at Transsion.
+                I'm interested in using design and AI to make the sustainable choice.
+                I enjoy thinking critically about a problem and helping teams turn ideas into clear, workable concepts.
+            </p>
+        </section>
+
+        <hr>
+
+        <!-- My story -->
+        <section aria-labelledby="story-heading">
+            <h2 id="story-heading">My story</h2>
+            <img src="assets/images/mypic-ph.webp" alt="[personal picture]" width="786" height="512">
+            <p>
+                I came to UC San Diego for Math-CS because I liked problems with clear answers.
+                Then I took my first Cognitive Science class and realized the harder problems were about people:
+                why we skip the option we know is better, or give up on a tool that was supposed to help us.
+                I added Cognitive Science, with a specialization in Design and Interaction, so I could study both sides.
+            </p>
+            <p>
+                At the XR Lab, I work on projects like Immersive Touch, a wearable that turns rehabilitation exercises
+                into AR/VR play. As a UX research intern at Transsion, I learned how to test ideas with real users
+                and turn what they say into decisions a team can act on.
+            </p>
+            <p>
+                Across all of it, I keep coming back to the same question:
+                <i>why is the sustainable option always the harder one?</i>
+                I want to keep designing tools, with and without AI, that make the better choice the easier one.
+            </p>
+        </section>
+
+        <hr>
+
+        <!-- Skill board -->
+        <section aria-labelledby="skills-heading">
+            <h2 id="skills-heading">Skills</h2>
+            <ul>
+                <li><b>UX research</b>: <tech-tag>A/B Test</tech-tag> <tech-tag>User experience</tech-tag></li>
+                <li><b>Programming</b>: <tech-tag>C++</tech-tag> <tech-tag>Java</tech-tag> <tech-tag>Python</tech-tag></li>
+                <li><b>Design and prototyping</b>: <tech-tag>Figma</tech-tag> <tech-tag>Adobe</tech-tag> <tech-tag>Framer</tech-tag></li>
+            </ul>
+        </section>
+        
+
+        <!-- My path timeline -->
+        <section aria-labelledby="path-heading">
+            <h2 id="path-heading">My path</h2>
+            <ol>
+                <li>Started at UC San Diego as a Math-CS major.</li>
+                <li>Added Cognitive Science (Design and Interaction).</li>
+                <li>Joined the XR Lab as a researcher.</li>
+                <li>Interned as a UX researcher at Transsion.</li>
+                <li>Graduating in December 2026 and looking for UX roles.</li>
+            </ol>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Xinyi. <a href="experiments.html">HTML experiments</a></p>
+    </footer>
+</body>
+</html>

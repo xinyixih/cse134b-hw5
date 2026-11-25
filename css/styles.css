@@ -1,0 +1,472 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    /* Colors */
+    --color-bg: #0e1117;                       /* near-black, slight navy tint */
+    --color-text: #f2f2f0;                     /* soft white, 16.9:1 */
+    --color-muted: #9aa0ab;                    /* labels & secondary text, 7.2:1 */
+    --color-accent: #eeaf9d;                   /* your pink, kept as the ONE accent, 10:1 */
+
+    /* Glass */
+    --glass-bg: rgba(255, 255, 255, 0.08);     /* 8% white = see-through */
+    --glass-border: 1px solid rgba(255, 255, 255, 0.15);
+    --glass-blur: blur(16px);
+
+    /* Font */
+    --font-main: "Montserrat", Arial, sans-serif;
+
+    /* Layout & spacing (keep yours) */
+    --max-width: 60rem;
+    --space-sm: 0.5rem;
+    --space: 1rem;
+    --space-lg: 2rem;
+    --space-xl: 4rem;
+
+    /* Shape */
+    --radius: 1rem;
+    --radius-pill: 999px;                      /* huge radius = fully round ends */
+
+    /* Header + validation colors (theme-aware) */
+    --header-bg: rgba(14, 17, 23, 0.7);
+    --color-error: #ff8a80;                    /* 8.6:1 on bg */
+    --color-success: #7ee2a8;                  /* 12:1 on bg */
+    --color-warning: #ffd479;                  /* 13:1 on bg */
+
+    color-scheme: dark;                        /* native controls + validation bubbles match */
+}
+
+/* ---------- Light theme (set by js/theme.js via <html data-theme="light">) ---------- */
+:root[data-theme="light"] {
+    --color-bg: #f7f5f2;                       /* warm off-white */
+    --color-text: #16181d;                     /* 16.6:1 */
+    --color-muted: #4f5561;                    /* 7.0:1 */
+    --color-accent: #a3402a;                   /* darker pink-terracotta, 5.9:1 */
+
+    --glass-bg: rgba(0, 0, 0, 0.04);
+    --glass-border: 1px solid rgba(0, 0, 0, 0.22);
+
+    --header-bg: rgba(247, 245, 242, 0.8);
+    --color-error: #b3261e;                    /* 6.0:1 */
+    --color-success: #1d6b3a;                  /* 6.4:1 */
+    --color-warning: #7a5200;                  /* 6.4:1 */
+
+    color-scheme: light;
+}
+
+/* ---------- Base (whole page) ---------- */
+body {
+    font-family: var(--font-main);
+    font-weight: 400;
+    color: var(--color-text);
+    background: var(--color-bg);
+    line-height: 1.5;
+    margin: 0px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; 
+}
+
+a {
+    color: var(--color-text);
+    text-underline-offset: 0.2em;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Descendant combinator: images inside project cards */
+article img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+/* ---------- Typography ---------- */
+h1, h2, h3 {
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: 300;
+    letter-spacing: -0.01em;
+}
+
+h2 {
+    font-size: 1.0rem; /* 0.875rem */
+    letter-spacing: 0.3em; /* 0.2 */
+    text-transform: uppercase;
+    color: var(--color-muted);
+    font-weight: 500;
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+/* ---------- Layout ---------- */
+header { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space);
+    background: var(--header-bg);
+    backdrop-filter: var(--glass-blur);
+
+    padding: var(--space) var(--space-lg);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+header > p { 
+    margin: 0; 
+    font-size: 1rem;
+}
+header > p a { 
+    color: var(--color-text);
+    text-decoration: none; /* remove underline */
+} 
+
+/* Child combinator: the link list directly inside the nav */
+nav > ul { 
+    /* row layout */
+    display: flex;
+    gap: var(--space-lg);
+    list-style: none;
+    margin: 0;
+
+    /* glass pill */
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    border: var(--glass-border);
+    border-radius: var(--radius-pill);
+    padding: 0.6em 1.4em;
+}
+
+/* Descendant combinator: links inside the main nav */
+nav a { 
+    text-decoration: none;
+}
+
+main, footer { 
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+}
+
+/* Child combinator: each top-level section of the page content */
+main > section {
+    padding: var(--space-xl) 0;
+}
+
+/* Attribute selector: the homepage intro section (heading + bio) */
+section[aria-labelledby="intro-heading"] { 
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--space-lg);
+    align-items: start;
+}
+
+footer {
+    border-top: var(--glass-border);
+    padding: var(--space-lg);
+    font-size: 0.8rem;
+    color: var(--color-muted);
+    text-align: center;
+}
+
+/* ---------- Components (reusable) ---------- */
+hr {
+    border: none;
+    border-top: var(--glass-border);
+    margin: 0;
+}
+
+/* Descendant combinator: project titles inside cards */
+article h3 {
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-top: var(--space);
+}      
+article h2 {
+    color: var(--color-text);
+    letter-spacing: 0.15em;
+}
+article h3 a {
+    color: var(--color-text);
+    text-decoration: none;
+}
+article p {
+    color: var(--color-muted);
+    max-width: 40rem;
+}
+
+tech-tag { 
+    display: inline-block;
+    padding: 0.2em 0.8em;
+    border: var(--glass-border);
+    border-radius: var(--radius-pill);
+
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text);
+}
+
+button { 
+    font: inherit;
+    padding: 0.75em 2em;
+    background: var(--color-accent);
+    color: var(--color-bg);
+    border: var(--glass-border);
+    border-radius: var(--radius-pill);
+
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+
+    cursor: pointer;
+}
+
+form {
+    max-width: 40rem;
+}
+fieldset {
+    border: var(--glass-border);
+    padding: var(--space-lg);
+    margin: 0 0 var(--space-lg);
+}
+legend {
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--color-muted);
+    font-size: 0.875rem;
+    padding: 0 0.5em;
+}
+/* Descendant combinator: row inside the form */
+form div { 
+    margin-bottom: var(--space); 
+}
+/* Each field row: label stacked above its control with Grid */
+form .field {
+    display: grid;
+    gap: var(--space-sm);
+}
+form .field label {
+    font-weight: 500;
+}
+/* Attribute selectors: the text-entry fields */
+input[type="text"], input[type="email"], textarea { 
+    box-sizing: border-box;
+    width: 100%;
+
+    font: inherit;
+    color: var(--color-text);
+    display: block;
+    padding: 0.75em;
+    background: var(--glass-bg);
+
+
+    border: var(--glass-border);
+    border-radius: var(--radius);
+}
+/* Descendant: shapes inside the contact heading icon */
+h2 svg rect, h2 svg polyline { 
+    stroke: var(--color-muted); 
+}
+
+/* ---------- States ---------- */
+a:hover {
+    color: var(--color-accent);
+}
+button:hover {
+   background: var(--color-text);
+}
+
+a:focus, button:focus, input:focus, textarea:focus {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+    section[aria-labelledby="intro-heading"] { 
+        grid-template-columns: 1fr;
+    }
+    h1 {
+        font-size: 2.5rem;
+    }
+    header { 
+        flex-direction: column;
+        gap: var(--space-sm);
+
+        padding: var(--space-sm) var(--space);
+    }
+    nav > ul { 
+        gap: var(--space);
+        font-size: 0.8rem;
+        
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    main, footer { 
+        padding: 0 var(--space);
+    }
+    main > section {
+        padding: var(--space-lg) 0;
+    }
+}
+/* ======================================================================
+   HW4 additions
+   ====================================================================== */
+
+/* Keep fields the browser scrolls to (e.g. first invalid field) out from
+   under the sticky header */
+html {
+    scroll-padding-top: 7rem;
+}
+@media (max-width: 600px) {
+    html { scroll-padding-top: 13rem; }
+}
+
+/* ---------- Contact form: instructions & hints ---------- */
+.form-instructions {
+    color: var(--color-muted);
+    max-width: 40rem;
+}
+.hint {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--color-muted);
+}
+textarea {
+    resize: vertical;
+    min-height: 8rem;
+}
+
+/* ---------- Validation states (HTML + CSS only) ----------
+   :user-invalid / :user-valid only match after the user has interacted with
+   the field or tried to submit, so empty fields are not red on page load.
+   Only border colour/style and an inset box-shadow change, so nothing shifts.
+   Dashed vs. solid border + the side bar give a non-colour cue. */
+input[type="text"]:required:user-invalid,
+input[type="email"]:required:user-invalid,
+textarea:required:user-invalid {
+    border-color: var(--color-error);
+    border-style: dashed;
+    box-shadow: inset 4px 0 0 var(--color-error);
+}
+input[type="text"]:required:user-valid,
+input[type="email"]:required:user-valid,
+textarea:required:user-valid {
+    border-color: var(--color-success);
+    box-shadow: inset 4px 0 0 var(--color-success);
+}
+/* Keep the focus ring visible on top of any validation styling */
+input:user-invalid:focus, textarea:user-invalid:focus {
+    outline-color: var(--color-error);
+}
+
+/* ---------- JS-enhanced form: message areas ---------- */
+.form-messages {
+    max-width: 40rem;
+    margin-bottom: var(--space-lg);
+}
+.message-area {
+    border: var(--glass-border);
+    border-radius: var(--radius);
+    padding: var(--space) var(--space-lg);
+    margin-bottom: var(--space);
+    background: var(--glass-bg);
+}
+.message-area h3 {
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--color-muted);
+    margin: 0 0 var(--space-sm);
+}
+.message-area p { margin: 0; }
+
+#error-list {
+    margin: 0;
+    padding-left: 1.25rem;
+    color: var(--color-error);
+}
+#error-list li + li { margin-top: var(--space-sm); }
+#error-list:empty::before {
+    content: "No problems right now.";
+    color: var(--color-muted);
+    margin-left: -1.25rem;
+}
+
+/* Character counter states: text + icon change, not only colour */
+#comments-info[data-state="warning"] {
+    border-color: var(--color-warning);
+    color: var(--color-warning);
+}
+#comments-info[data-state="limit"] {
+    border-color: var(--color-warning);
+    border-style: dashed;
+    color: var(--color-warning);
+    font-weight: 600;
+}
+
+/* ---------- Theme toggle (hidden until js/theme.js wires it up) ---------- */
+#theme-toggle {
+    padding: 0.45em 1.2em;
+    font-size: 0.75rem;
+}
+
+/* ---------- View transitions ----------
+   1) Cross-document: links between pages on this site cross-fade (Chrome 126+).
+   2) Same-document: js/theme.js wraps the theme change in
+      document.startViewTransition(); the pseudo-elements below style it.
+   Both are switched off for prefers-reduced-motion. */
+@media (prefers-reduced-motion: no-preference) {
+    @view-transition {
+        navigation: auto;
+    }
+    ::view-transition-old(root),
+    ::view-transition-new(root) {
+        animation-duration: 350ms;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    ::view-transition-group(*),
+    ::view-transition-old(*),
+    ::view-transition-new(*) {
+        animation: none !important;
+    }
+}
+
+/* ---------- HW5: Fun Facts component ---------- */
+/* The page passes its theme colors to the component */
+fun-facts {
+    --facts-bg: var(--glass-bg);
+    --facts-text: var(--color-text);
+    --facts-border: var(--color-accent);
+}
+
+/* The component reads them, with fallbacks if they're missing */
+fun-facts {
+    display: block;                      /* custom elements are inline by default */
+    margin-top: var(--space);
+    padding: var(--space-lg);
+    border-radius: var(--radius);
+    background: var(--facts-bg, #1b1f27);
+    color: var(--facts-text, #f2f2f0);
+    border: 1px solid var(--facts-border, #eeaf9d);
+}
+
+fun-facts button {
+    margin: 0 var(--space-sm) var(--space-sm) 0;
+}

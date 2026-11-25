@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Xinyi, a Math-CS and Cognitive Science student working in UX research, XR and design.">
+    <title>Xinyi Hu - Portfolio</title>
+
+    <link rel="icon" href="assets/images/icon-ph.webp">
+    <script src="js/hello-world.js" defer></script> <!-- Custom #2 -->
+    <script src="js/theme.js"></script>
+    <script src="fun-facts.js" defer></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- Site name & Nav Bar -->
+    <header>
+        <p><a href="index.html" aria-current="page">HOME</a></p>
+
+        <!-- Nav Bar -->
+        <nav aria-label="Main">
+            <ul>
+                <li><a href="about.html">About</a></li>
+                <li><a href="project.html">Project</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="form-no-js.html">Form (No JS)</a></li>
+                <li><a href="form-with-js.html">Form (JS)</a></li>
+            </ul>
+        </nav>
+
+        <!-- Theme switch: hidden until js/theme.js makes it work -->
+        <button type="button" id="theme-toggle" hidden>Switch to light theme</button>
+    </header>
+
+    <main>
+        <!-- Personal intro section-->
+        <section aria-labelledby="intro-heading">
+            <h1 id="intro-heading">Hi! I'm Xinyi</h1>
+            <p>
+                I'm a fourth-year <b>Math-CS</b> and <b>Cognitive Science</b> major (Design and Interaction specialization)
+                and a researcher at the XR Lab, and interned as a UX researcher at Transsion.
+                I'm interested in using design and AI to make the sustainable choice.
+                I enjoy thinking critically about a problem and helping teams turn ideas into clear, workable concepts.
+                <strong>Open to UX and engineering roles starting 2027.</strong>
+            </p>
+        </section>
+
+        <hr>
+        <!-- Featured project section -->
+        <section aria-labelledby="featured-heading">
+            <h2 id="featured-heading">Featured Projects</h2>
+            <article>
+                <picture>
+                    <source srcset="assets/images/immersive-touch-ph.webp" type="image/webp">
+                    <img src="assets/images/immersive-touch-ph.jpg" alt="Immersive Touch wearable rehabilitation device">
+                </picture>
+
+                <h3><a href="project.html">Immersive Touch</a></h3>
+                <p>
+                    Immersive Touch is a <em>closed-loop</em> rehabilitation wearable device for <i>Complex Regional Pain Syndrome</i>.
+                    Soft pneumatic actuation delivers passive tactile input, bilateral sensors track pressure and temperature in real time,
+                    and AR/VR gameplay turns desensitization into play, while every session compiles into a report clinicians can trust.
+                </p>
+            </article>
+            <a href="project.html">Check out more projects!<span aria-hidden="true">→</span></a>
+        </section>
+
+        <hr>
+        <!-- Connect: Resume & contact section -->
+        <section aria-labelledby="connect-heading">
+            <h2 id="connect-heading">Let's Connect!</h2>
+            <p><a href="assets/resume.pdf">Click and download my Resume</a></p>
+
+            <ul>
+                <li><a href="https://github.com/xinyixih">GitHub</a></li>
+                <li><a href="https://www.linkedin.com/in/your-profile">LinkedIn</a></li>
+                <li><a href="mailto:xih049@ucsd.edu">Email</a></li>
+                <li><a href="tel:+18582898402">Phone</a></li>
+            </ul>
+        </section>
+
+        <hr>
+        <!-- Fun-fact -->
+        <section aria-labelledby="facts-heading">
+            <button type="button" id="compact-toggle" hidden>Compact view</button>
+            <fun-facts></fun-facts>
+            <noscript>
+                <p>Enable JavaScript to see my fun facts and load live random facts.</p>
+            </noscript>
+        </section>
+
+        <hello-world></hello-world>
+    </main>
+
+    {% include "footer.njk" %}
+</body>
+</html>

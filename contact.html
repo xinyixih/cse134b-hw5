@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Xinyi about roles, research">
+    <title>Xinyi - Contact</title>
+
+    <script src="js/theme.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Site name & Nav Bar -->
+    <header>
+        <p><a href="index.html">HOME</a></p>
+
+        <!-- Nav Bar -->
+        <nav aria-label="Main">
+            <ul>
+                <li><a href="about.html">About</a></li>
+                <li><a href="project.html">Project</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="contact.html" aria-current="page">Contact</a></li>
+                <li><a href="form-no-js.html">Form (No JS)</a></li>
+                <li><a href="form-with-js.html">Form (JS)</a></li>
+            </ul>
+        </nav>
+
+        <!-- Theme switch: hidden until js/theme.js makes it work -->
+        <button type="button" id="theme-toggle" hidden>Switch to light theme</button>
+    </header>
+
+    <main>
+        <h1>Contact</h1>
+        <section aria-labelledby="links-heading">
+            <h2 id="links-heading">Ways to reach me</h2>
+            <!-- Buttons haven't link to real contact-->
+            <ul>
+                <li><a href="https://github.com/xinyixih">GitHub</a></li>
+                <li><a href="https://www.linkedin.com/in/placeholder">LinkedIn</a></li>
+                <li><a href="mailto:xih049@ucsd.edu">Email</a></li>
+                <li><a href="tel:+18582898402">Phone</a></li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section aria-labelledby="message-heading">
+            <h2 id="message-heading">
+                Send me a message
+                    <svg width="24" height="24" viewBox="0 0 24 24" role="img" aria-labelledby="envelope-title">
+                    <title id="envelope-title">Envelope</title>
+                    <rect x="2" y="5" width="20" height="14" fill="none" stroke="black" stroke-width="2"/>
+                    <polyline points="2,5 12,13 22,5" fill="none" stroke="black" stroke-width="2"/>
+                </svg>
+            </h2>
+
+            <p>Prefer a form? Choose either version. Both send the same message.</p>
+            <ul>
+                <li><a href="form-with-js.html">Contact form</a>, with live error messages and a character counter</li>
+                <li><a href="form-no-js.html">Contact form, no-JavaScript version</a>, using only HTML validation</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Xinyi. <a href="experiments.html">HTML experiments</a></p>
+    </footer>
+</body>
+</html>

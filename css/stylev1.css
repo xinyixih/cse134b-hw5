@@ -1,0 +1,158 @@
+/* ---------- Variables ---------- */
+:root {
+    --color-text: #ffF8f0;          /* cream */
+    --color-bg: #182335;            /* navy */
+    --color-accent: #eeaf9d;        /* pink: links, highlights */
+    --color-heading: #f2ebeb;          
+    --color-surface: #22304a;   /* a bit lighter than navy */
+
+    --color-coral: #E15546; 
+    --color-cream: #ffF8f0;
+
+    -webkit-font-smoothing: antialiased;
+    --font-heading: "Fraunces", Georgia, serif;
+    --font-body: "DM Sans", Arial, sans-serif;
+    --max-width: 60rem;
+
+    --space-sm: 0.5rem;
+    --space: 1rem;
+    --space-lg: 2rem;
+
+    --radius: 0.5rem;
+    --border: 1px solid var(--color-accent);
+}
+
+/* ---------- Base (whole page) ---------- */
+body {
+    font-family: var(--font-body);
+    color: var(--color-text);
+    background: var(--color-bg);
+    line-height: 1.5;
+    margin: 0px;
+}
+
+a {
+    color: var(--color-accent);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+
+    border: 0.4rem solid var(--color-cream);
+    border-radius: var(--radius);
+}
+
+article img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* ---------- Typography ---------- */
+h1, h2, h3 {
+    font-family: var(--font-heading);
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: var(--color-heading);
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 1.75rem;
+
+    display: inline-block;
+    border-radius: 0.15rem;
+    border-bottom: 0.25rem solid var(--color-coral);
+    padding-bottom: var(--space-sm);
+    letter-spacing: 0.02em;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+/* ---------- Layout ---------- */
+header { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space);
+    padding: 0 var(--space-lg);
+    background-color: var(--color-cream);
+    border-bottom: 0.25rem solid var(--color-accent);
+}
+
+header > p { 
+    margin: 0; 
+    font-family: var(--font-heading);
+    font-size: x-large;
+}
+header > p a { 
+    color: var(--color-bg);
+    text-decoration: none; /* remove underline */
+} 
+
+nav > ul { 
+
+}
+
+main, footer { 
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--space-sm)
+}
+
+/* ---------- Components (reusable) ---------- */
+hr {
+    /* border: none;
+    height: 0.5rem;
+    background: repeating-linear-gradient(
+        45deg,           /* stripe angle */
+    /*    var(--color-coral) 0 20px,    /* coral from 0 to 10px... */
+    /*    var(--color-cream) 20px 40px 
+    ); */
+    opacity: 0;
+    
+}
+
+main > section { 
+    padding: 0 calc(var(--space-lg) * 4);
+}
+
+article { /* project card */
+
+}        
+
+tech-tag { 
+
+}
+
+button { 
+
+}
+
+/* ---------- 6. Page-specific ---------- */
+#intro-heading { } /* homepage only */
+
+/* Homepage intro section (heading + bio) */
+section[aria-labelledby="intro-heading"] { 
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: var(--space-lg);
+    align-items: start;
+    padding: calc(var(--space-lg) * 2) 0;
+}
+
+form { }           /* contact page */
+
+/* ---------- 7. States ---------- */
+a:hover { }
+a:focus, button:focus, input:focus { }
+
+/* ---------- 8. Responsive ---------- */
+@media (max-width: 600px) { }
